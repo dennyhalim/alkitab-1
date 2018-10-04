@@ -1,20 +1,27 @@
+
 import { Component, ViewChild } from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
+import { ListkitabPage } from '../pages/listkitab/listkitab';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { BiblelistProvider } from '../providers/biblelist/biblelist';
 
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  
+
 })
+
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-
+ 
   // make HelloIonicPage the root (or first) page
   rootPage = HelloIonicPage;
   pages: Array<{title: string, component: any}>;
@@ -23,14 +30,16 @@ export class MyApp {
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
+    public biblelist: BiblelistProvider
   ) {
     this.initializeApp();
 
     // set our app's pages
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'My First List', component: ListPage },
+      { title: 'My Bible List', component: ListkitabPage }
     ];
   }
 
