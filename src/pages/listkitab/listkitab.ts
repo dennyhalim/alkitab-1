@@ -1,5 +1,7 @@
 import { GroupingPipe } from './../../pipes/grouping/grouping';
 import { GroupByPipe } from './../../pipes/pipetransform/pipetransform';
+import { SearchPipe } from '../../pipes/search/search';
+import { SortPipe } from '../../pipes/sort/sort';
 import { Component, PipeTransform } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BiblelistProvider } from '../../providers/biblelist/biblelist';
@@ -22,7 +24,7 @@ import { KitabdetailPage } from '../Kitabdetail/Kitabdetail';
 })
 export class ListkitabPage {
   kitabss: any;
-  Pipes: [GroupByPipe,GroupingPipe]
+  Pipes: [GroupByPipe,GroupingPipe,SortPipe,SearchPipe]
   descending: boolean = false;
   order: number;
   column: string = 'name';
