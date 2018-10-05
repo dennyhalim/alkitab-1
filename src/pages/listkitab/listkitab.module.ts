@@ -3,6 +3,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { ListkitabPage } from './listkitab';
 import { PipesModule } from '../../pipes/pipes.module';
 
+
 @NgModule({
   declarations: [
     ListkitabPage,

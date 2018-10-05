@@ -23,6 +23,9 @@ import { KitabdetailPage } from '../Kitabdetail/Kitabdetail';
 export class ListkitabPage {
   kitabss: any;
   Pipes: [GroupByPipe,GroupingPipe]
+  descending: boolean = false;
+  order: number;
+  column: string = 'name';
   getKitabss() {
     this.BiblelistProvider.getKitabs()
     .then(data => {
@@ -30,9 +33,13 @@ export class ListkitabPage {
       //console.log(this.kitabss[0]);
     });
   }
-  
+  sort(){
+    this.descending = !this.descending;
+    this.order = this.descending ? 1 : -1;
+  }
   constructor(public navCtrl: NavController, public navParams: NavParams, public BiblelistProvider: BiblelistProvider) {
     this.getKitabss();
+    this.sort();
     //console.log(this.kitabss);
   }
 

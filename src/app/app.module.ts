@@ -24,7 +24,8 @@ import { BiblelistProvider } from '../providers/biblelist/biblelist';
     ItemDetailsPage,
     ListPage,
     ListkitabPage,
-    KitabdetailPage
+    KitabdetailPage,
+
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,10 @@
 
 <ion-content padding>
   <ion-grid>
-    <ion-row *ngFor="let item of kitabss | grouping:'kitab'">
+   
+    <ion-row *ngFor="let item of kitabss | grouping:'kitab' | search : 'terms' | sort: {property: column, order: order}">
+        <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+        <button ion-button type="button" (click)="sort()">Sort</button>
       <ion-col >
         <label  >{{item.key}}</label>
       </ion-col>

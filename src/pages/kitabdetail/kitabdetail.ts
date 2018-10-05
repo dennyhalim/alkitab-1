@@ -17,12 +17,16 @@ import { BiblelistProvider } from '../../providers/biblelist/biblelist';
 export class KitabdetailPage {
   kitabs: any;
   kitabdetail: any;
+  title:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
 
     this.kitabdetail = this.navParams.get('item');
+    
+    this.title= this.kitabdetail[0].kitab
+    console.log(this.title)
     console.log('sjdjs')
     console.log(this.kitabdetail[0].kitab)
     console.log('efguhhd')
